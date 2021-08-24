@@ -3,7 +3,7 @@ import MyButton from "./UI/buttons/MyButton";
 import MyInput from "./UI/inputs/MyInput";
 
 const PostForm = ({ createPost }) => {
-  const [post, setPost] = React.useState({ titleInput: "", contentInput: "" });
+  const [post, setPost] = React.useState({ title: "", content: "" });
 
   const addNewPost = (e) => {
     e.preventDefault();
@@ -12,22 +12,23 @@ const PostForm = ({ createPost }) => {
       id: Date.now(),
     };
     createPost(newPost);
-    setPost({ titleInput: "", contentInput: "" });
+    
+    setPost({ title: "", content: "" });
   };
 
   return (
     <form>
       <MyInput
-        value={post.titleInput}
+        value={post.title}
         onChange={(e) =>
-          setPost({ ...post, titleInput: e.currentTarget.value })
+          setPost({ ...post, title: e.currentTarget.value })
         }
         placeholder="For title..."
       />
       <MyInput
-        value={post.contentInput}
+        value={post.content}
         onChange={(e) =>
-          setPost({ ...post, contentInput: e.currentTarget.value })
+          setPost({ ...post, content: e.currentTarget.value })
         }
         placeholder="For content..."
       />
