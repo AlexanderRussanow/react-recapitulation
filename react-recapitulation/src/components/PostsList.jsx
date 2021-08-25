@@ -22,7 +22,7 @@ const PostsList = ({ posts, postTitle, removePost }) => {
               number={index + 1}
               id={p.id}
               title={p.title}
-              content={p.content}
+              content={p.body}
             />
           </CSSTransition>
         ))}
